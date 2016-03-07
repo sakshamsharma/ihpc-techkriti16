@@ -46,7 +46,7 @@ var differenceTravel = fromTime.getTime() - toTime.getTime();
 var seconds = Math.floor((differenceTravel) / (1000));
 if(seconds < 0) {
   document.getElementById('time').innerHTML="Time till end of contest";
-  fromTime = new Date('2016-03-10T23:59:59+0530');
+  fromTime = new Date('2016-03-10T18:00:00+0530');
   differenceTravel = fromTime.getTime() - toTime.getTime();
   seconds = Math.floor((differenceTravel) / (1000));
   if(seconds < 0) {
