@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>IHPC '16</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/flipclock.css" media="screen">
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="./js/flipclock.min.js"></script>
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">IHPC 2016</h1>
+      <h2 class="project-tagline">Techkriti IIT Kanpur, in association with CDAC India</h2>
+      <div id="time">Time left till start</div><br/><br/>
+      <div class="countdown" style="margin-right: auto; margin-left: auto; width: 480px;"></div>
+      <div id="time">Note that this time may differ from server time.</div><br/><br/>
+    </section>
+
+    <section class="main-content">
+      <a id="chaos" class="anchor" href="#chaos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><h1>IHPC</h1>
+      <p>The High Performance Computing contest of Techkriti, IIT Kanpur.</p>
+      <p>Run your programs on the <b>PARAM Super Computer of India!</b></p>
+      <p>The event's learning phase would be live at 08:00:00 PM on 7th of March, 2016.<br/>
+      <b>Visit this page a few minutes before that</b> to register yourself on the submission portal.</p>
+      <p>The following links would be live <b>only when the contest starts</b>:</p>
+      <p>The IHPC portal (also, the problems would be here) would be <a href="/404.html">here</a></p>
+
+    </section>
+
+    <script>
+var fromTime = new Date('2016-03-07T20:00:00+0530');
+var toTime = new Date();
+
+var differenceTravel = fromTime.getTime() - toTime.getTime();
+var seconds = Math.floor((differenceTravel) / (1000));
+if(seconds < 0) {
+  document.getElementById('time').innerHTML="Time till end of contest";
+  fromTime = new Date('2016-03-10T23:59:59+0530');
+  differenceTravel = fromTime.getTime() - toTime.getTime();
+  seconds = Math.floor((differenceTravel) / (1000));
+  if(seconds < 0) {
+    seconds=0;
+    document.getElementById('time').innerHTML="Contest has ended!";
+  }
+}
+
+var clock = $('.countdown').FlipClock(seconds, {
+  countdown: true
+});
+
+    </script>
+  </body>
+</html>
